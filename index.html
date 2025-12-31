@@ -24,10 +24,17 @@
 <div id="message">🎉 Happy New Year, welcome to 2026 🎉</div>
 
 <script>
-  function showMsg() {
-    document.getElementById("message").classList.add("show");
-    launchConfetti();
-  }
+function showMsg() {
+    const msg = document.getElementById("message");
+    msg.style.display = "inline-block";
+
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.4;   // soft volume
+    music.play();
+
+    createHeartBurst();  // if you have hearts
+}
+
 
   function launchConfetti() {
     const container = document.getElementById("confetti-container");
@@ -45,6 +52,9 @@
     }
   }
 </script>
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 </body>
 </html>
